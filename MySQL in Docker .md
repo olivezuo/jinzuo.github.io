@@ -47,15 +47,15 @@
 	$ docker exec -ti mysql-master 'mysql' -uroot -p123456 -e"SHOW MASTER STATUS"
 	
 
-	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e'change master to master_host="mysql",master_user="repl",master_password="slavepass",master_log_file="02cb9916fc4d-bin.000001",master_log_pos=154;' -vvv
+	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e'change master to master_host="mysql",master_user="repl",master_password="slavepass",master_log_file="02cb9916fc4d-bin.000001",master_log_pos=154;' 
 
 	```
 	
 2. Start the replication
 
 	```
-	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e"START SLAVE;" -vvv
+	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e"START SLAVE;" 
 
-	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e"SHOW SLAVE STATUS" -vvv
+	$ docker exec -ti mysql-slave 'mysql' -uroot -p123456 -e"SHOW SLAVE STATUS" 
 
 	```
