@@ -6,7 +6,6 @@
 	```
 	$ mkdir -p ~/Docker/masterdb/data ~/Docker/masterdb/data
 	$ mkdir -p ~/Docker/masterdb/cnf ~/Docker/slavedb/cnf
-	...
 	
 	```
 3. Create Configuration file for master and slave
