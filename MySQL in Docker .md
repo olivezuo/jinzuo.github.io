@@ -11,13 +11,14 @@
 3. Create Configuration file for master and slave
 
 	```
-	$ sudo vi ~/Docker/masterdb/cnf/config-file.cnf
+	$ vi ~/Docker/masterdb/cnf/config-file.cnf
 		# Config Settings:
 		[mysqld]
 		server-id=1
 		binlog_format=ROW
 		log-bin
-	$ sudo vi ~/Docker/slavedb/cnf/config-file.cnf
+
+	$ vi ~/Docker/slavedb/cnf/config-file.cnf
 		# Config Settings:
 		[mysqld]
 		server-id=2
