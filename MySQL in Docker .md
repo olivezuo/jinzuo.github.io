@@ -4,21 +4,21 @@
 2. Create local data files
 
 	```
-	$ sudo mkdir -p /opt/local/Docker/masterdb/data /opt/local/Docker/slavedb/data
-	$ sudo mkdir -p /opt/local/Docker/masterdb/cnf /opt/local/Docker/slavedb/cnf
+	$ mkdir -p ~/Docker/masterdb/data ~/Docker/masterdb/data
+	$ mkdir -p ~/Docker/masterdb/cnf ~/Docker/slavedb/cnf
 	...
 	
 	```
 3. Create Configuration file for master and slave
 
 	```
-	$ sudo vi /opt/local/Docker/masterdb/cnf/config-file.cnf
+	$ sudo vi ~/Docker/masterdb/cnf/config-file.cnf
 		# Config Settings:
 		[mysqld]
 		server-id=1
 		binlog_format=ROW
 		log-bin
-	$ sudo vi /opt/local/Docker/slavedb/cnf/config-file.cnf
+	$ sudo vi ~/Docker/slavedb/cnf/config-file.cnf
 		# Config Settings:
 		[mysqld]
 		server-id=2
@@ -27,9 +27,9 @@
 4. Create the container 
 
 	```
-	$ docker run --name mysql-master -v /Users/zuoji001/Docker/masterdb/cnf:/etc/mysql/conf.d -v /Users/zuoji001/Docker/masterdb/data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
+	$ docker run --name mysql-master -v ~/Docker/masterdb/cnf:/etc/mysql/conf.d -v ~/Docker/masterdb/data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
 
-	$ docker run --name mysql-slave -v /Users/zuoji001/Docker/slavedb/cnf:/etc/mysql/conf.d -v /Users/zuoji001/Docker/slavedb/data:/var/lib/mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
+	$ docker run --name mysql-slave -v ~/Docker/slavedb/cnf:/etc/mysql/conf.d -v ~/Docker/slavedb/data:/var/lib/mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
 
 	```
 
